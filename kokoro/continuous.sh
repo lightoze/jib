@@ -3,6 +3,9 @@
 set -e
 set -x
 
+docker version || true
+docker info || true
+
 gcloud components install docker-credential-gcr
 
 # docker-credential-gcr uses GOOGLE_APPLICATION_CREDENTIALS as the credentials key file
