@@ -8,6 +8,10 @@ gcloud components install docker-credential-gcr
 # For macOS to find docker-credential-gcr
 export PATH=$PATH:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin/
 
+docker-credential-gcr || true
+which docker-credential-gcr || true
+which docker-credential-osxkeychain
+
 # docker-credential-gcr uses GOOGLE_APPLICATION_CREDENTIALS as the credentials key file
 export GOOGLE_APPLICATION_CREDENTIALS=${KOKORO_KEYSTORE_DIR}/72743_jib_integration_testing_key
 docker-credential-gcr configure-docker
