@@ -9,6 +9,7 @@ gcloud components install docker-credential-gcr
 export GOOGLE_APPLICATION_CREDENTIALS=${KOKORO_KEYSTORE_DIR}/72743_jib_integration_testing_key
 docker-credential-gcr configure-docker
 cat ${HOME}/.docker/config.json || true
+cat /Users/kbuilder/.docker/config.json || true
 
 exit 0
 
