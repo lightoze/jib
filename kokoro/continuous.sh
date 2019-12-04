@@ -9,7 +9,7 @@ which docker-credential-desktop || true
 which docker-credential-osxkeychain || true
 ls -l `which docker-credential-desktop` || true
 ls -l `which docker-credential-osxkeychain` || true
-ls -l Applications/Docker.app/Contents/Resources/bin/ || true
+ls -l /Applications/Docker.app/Contents/Resources/bin/ || true
 
 gcloud components install docker-credential-gcr
 
