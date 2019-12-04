@@ -9,6 +9,7 @@ which docker-credential-desktop || true
 which docker-credential-osxkeychain || true
 ls -l `which docker-credential-desktop` || true
 ls -l `which docker-credential-osxkeychain` || true
+ls -l Applications/Docker.app/Contents/Resources/bin/ || true
 
 gcloud components install docker-credential-gcr
 
@@ -22,7 +23,7 @@ docker kill $(docker ps --all --quiet) || true
 # Sets the integration testing project.
 export JIB_INTEGRATION_TESTING_PROJECT=jib-integration-testing
 
-security unlock-keychain
+cat ${HOME}/.docker/config.json
 
 # Restarting Docker for Mac to get around the certificate expiration issue:
 # b/112707824
@@ -33,8 +34,6 @@ if [ "${KOKORO_JOB_CLUSTER}" = "MACOS_EXTERNAL" ]; then
   osascript -e 'quit app "Docker"'
   open -a Docker
   while ! docker info > /dev/null 2>&1; do sleep 1; done
-
-  security unlock-keychain
 fi
 
 cat ${HOME}/.docker/config.json
