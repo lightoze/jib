@@ -3,7 +3,7 @@
 set -e
 set -x
 
-rm -f ${HOME}/.docker/config.json
+#rm -f ${HOME}/.docker/config.json
 which docker-credential-desktop || true
 which docker-credential-osxkeychain || true
 ls -l `which docker-credential-desktop` || true
@@ -40,7 +40,7 @@ fi
 cd github/jib
 
 cat ${HOME}/.docker/config.json || true
-rm -f ${HOME}/.docker/config.json
+#rm -f ${HOME}/.docker/config.json
 
 mkdir -p /tmp/a
 docker run --rm --entrypoint htpasswd registry:2 -Bbn user pass > /tmp/a/htpasswd
