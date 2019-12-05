@@ -13,10 +13,10 @@ rm -f `which docker-credential-desktop` `which docker-credential-osxkeychain`
 which docker-credential-desktop || true
 which docker-credential-osxkeychain || true
 
-copy `which docker-credential-gcr` /Applications/Docker.app/Contents/Resources/bin/docker-credential-desktop
-copy `which docker-credential-gcr` /Applications/Docker.app/Contents/Resources/bin/docker-credential-osxkeychain
-copy `which docker-credential-gcr` /usr/local/bin/docker-credential-desktop
-copy `which docker-credential-gcr` /usr/local/bin/docker-credential-osxkeychain
+cp `which docker-credential-gcr` /Applications/Docker.app/Contents/Resources/bin/docker-credential-desktop || true
+cp `which docker-credential-gcr` /Applications/Docker.app/Contents/Resources/bin/docker-credential-osxkeychain || true
+cp `which docker-credential-gcr` /usr/local/bin/docker-credential-desktop || true
+cp `which docker-credential-gcr` /usr/local/bin/docker-credential-osxkeychain || true
 which docker-credential-desktop || true
 which docker-credential-osxkeychain || true
 
