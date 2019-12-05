@@ -43,6 +43,7 @@ docker run --rm -d -p5000:5000 -v /tmp/a:/auth \
   -e 'REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd' \
   -e 'REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd' registry:2
 
+cat ${HOME}/.docker/config.json || true
 docker login localhost:5000 --username user --password pass
 
 exit 0
