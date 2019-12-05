@@ -33,6 +33,7 @@ fi
 cd github/jib
 
 cat ${HOME}/.docker/config.json || true
+rm -f ${HOME}/.docker/config.json
 
 mkdir -p /tmp/a
 docker run --rm --entrypoint htpasswd registry:2 -Bbn user pass > /tmp/a/htpasswd
